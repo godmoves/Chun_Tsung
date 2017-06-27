@@ -1,7 +1,5 @@
 ## To read
 
-1. An	All-Optical,	Non-volatile,	Bidirectional,Phase-Change	Meta-Switch
-
 2. Electrically actuated phase-change pixels for transmissive and reflective spatial light modulators in the near and mid infrared
 
 3. Phase-Change Materials for Group-IV Electro-Optical Switching and Modulation
@@ -27,3 +25,5 @@
 13. Ultra-small, self-holding, optical gate switch using Ge 2 Sb 2 Te 5 with a multi-mode Si waveguide
 
 ## Done
+
+1. An	All-Optical,	Non-volatile,	Bidirectional,Phase-Change	Meta-Switch
