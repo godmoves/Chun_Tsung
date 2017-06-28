@@ -1,0 +1,156 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{Title}\label{title}
+
+Phase-Change Materials for Group-IV Electro-Optical Switching and
+Modulation
+
+\subsection{Authors}\label{authors}
+
+\begin{itemize}
+\tightlist
+\item
+  Richard Soref
+\end{itemize}
+
+\subsection{Abstract}\label{abstract}
+
+2 x 2 and 1 x 4 optical routing switches
+
+The electrically actuated optical layer is a thin film of
+\(\mathrm{Ge_2 Sb_2 Te_5}\) or GeTe or GeSe whose thickness is in the 10
+to 100-nm range
+
+This film was embedded at the centerline of an SOI, SON, or GeOI channel
+waveguide structure for \emph{MZI} and \emph{directional-coupler}
+switching
+
+Alternatively, to switch free-space light beams, \textbf{Ge prisms}
+sandwiching the film were employed.
+
+\subsection{Highlight}\label{highlight}
+
+The PCM index is \(\mathrm{n_{am} + i\,k_{am}}\) and
+\(\mathrm{n_{cr} + i\,k_{cr}}\) in \emph{am} and \emph{cr},
+respectively. Hence the phase change gives \textbf{electrorefraction}
+(ER) of \(\mathrm{\Delta n = n_{cr} -n_{am}}\), and
+\textbf{electro-absorption} (EA) of
+\(\mathrm{\Delta k = k_{cr} - k_{am}}\). These EA and ER are stronger
+than those seen in \emph{any prior} EO effect. For an inline, waveguided
+1 x 1 modulator device, EA can be optimized to provide deep intensity
+modulation over a few microns of length. However, for digital
+modulation, the modulator speed will be limited to
+\textbf{\textasciitilde{}10 Mb/s}. Therefore, it is preferable to
+configure this 1 x 1 modulator as a \textbf{low-speed VOA}.
+
+My colleagues and I have investigated \(\mathrm{Ge_2 Sb_2 Te_5}\) (GST),
+GeTe and GeSe PCMs and their index properties are as follows:\\
+GST (1.55 $\mathrm{\mu m}$)
+\(\mathrm{n_{am} + i\,k_{am} = 4.60 + i\,0.12,\;n_{cr} + i\,k_{cr} = 7.45 + i\,1.49}\) ;\\
+GeTe (1.55 $\mathrm{\mu m}$)
+\(\mathrm{n_{am} + i\,k_{am} = 4.22 + i\,0.12,\;n_{cr} + i\,k_{cr} = 6.81 +i\,0.30}\) ;\\
+GeSe (1.55 $\mathrm{\mu m}$)
+\(\mathrm{n_{am} + i\,k_{am} = 2.40 + i\,0.00006,\;n_{cr} + i\,k_{cr} = 2.97 + i\,0.00006}\) ;\\
+GST (2.1 $\mathrm{\mu m}$)
+\(\mathrm{n_{am} + i\,k_{am} = 4.10 + i\,0.006,\;n_{cr} + i\,k{cr} = 6.85 + i\,0.50}\) .
+
+Clearly, large EA is available for VOAs and SLMs. However, in the switch
+category, we do not want EA. Low IL and low CT in the 2 x 2 are obtained
+only when \textbf{ER \textgreater{}\textgreater{} EA and
+\(\mathbf{k_{am}}\) \textless{} 0.007}.
+
+\newpage
+The strategy of minimizing both \(\mathrm{k_{am}\,and\;k_{cr}}\) comes
+down to a choice of PCM and operation-wavelength. Each PCM has \emph{am}
+and \emph{cr} bandgap-wavelengths. \textbf{For low k's the operation
+wavelength should be longer than both bandgap wavelengths}.
+
+\paragraph{RESULTS OF SIMULATIONS ON EO
+SWITCHES}\label{results-of-simulations-on-eo-switches}
+
+We investigated two 2 x 2 switches: the MZI and the three-waveguide (3W)
+directional coupler. Here are results at 2100-nm for 10-nm of GST
+embedded midlevel in 840nm x 420nm cross-section SOI nanowires: the MZI
+with TM polarization and 38 Pm-length active region gives cross-state
+IL(0.5dB) with CT\\(-15dB) and bar-state IL(1.1dB) with CT
+(-16dB); the 3W with TE polarization and 568 Pm active length in the central waveguide
+gives second-bar IL(0.8dB) with CT(-16dB) and first-cross IL(1.0dB) with
+CT(-18dB). Turning to 1550 nm where a 20-nm layer of GeSe was simulated
+in SOI waveguides of 620nm x 310nm cross-section, we found for the TE
+polarization that an active length of 19 Pm gave 2 x 2 MZI switching
+while an interaction length of 115 Pm sufficed for the 3W switch.
+
+In one arm of the MZI, there is end-fire coupling between the
+PCM-embedded segment and the uniform bulk silicon nanowires at the
+segment's input and output. These two interfaces lead to an added IL for
+the MZI which is about 1.2 dB for TE and 0.17 dB for TM in the \emph{cr}
+state.
+
+\subsection{Related work}\label{related-work}
+
+\textbf{Future work:} Looking to the future, it is likely that further $\mathrm{k_{cr}}$
+reduction at 1.55  would be attained with the PCM \(\mathrm{Si_1 Sb_2 Te_4}\)
+whose \(\mathrm{E_g(am)}\) = 0.80 eV and \(\mathrm{E_g(cr)}\) = 0.61 eV
+are slightly larger than those of GeSe. Silicon-containing PCMs like
+\(\mathrm{Si_1 Sb_2 Te_4}\) might offer gaps even wider.
+
+\paragraph{References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  Phase-change materials for electro-optical switching in the near- and
+  mid-infrared
+\end{itemize}
+
+\end{document}

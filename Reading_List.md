@@ -1,7 +1,5 @@
 ## To read
 
-3. Phase-Change Materials for Group-IV Electro-Optical Switching and Modulation
-
 4. Simulations of Silicon-on-Insulator Channel-Waveguide Electro-optical 2 × 2 Switches and 1 × 1 Modulators Using a Ge 2 Sb 2 Te 5 Self-Holding Layer
 
 5. Electro-optical 1 x 2, 1 x N and N x N fiber-optic and free-space switching over 1.55 to 3.0 μm using a Ge-Ge 2 Sb 2 Te 5 -Ge prism structure
@@ -30,8 +28,12 @@
 
 17. Waveguide-size hybrid Si-VO2 waveguide electroabsorption optical switches and photodetectors
 
+18. Phase-change materials for electro-optical switching in the near- and mid-infrared
+
 ## Done
 
 1. An	All-Optical,	Non-volatile,	Bidirectional,Phase-Change	Meta-Switch
 
 2. Electrically actuated phase-change pixels for transmissive and reflective spatial light modulators in the near and mid infrared
+
+3. Phase-Change Materials for Group-IV Electro-Optical Switching and Modulation
