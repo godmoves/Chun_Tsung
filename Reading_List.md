@@ -1,7 +1,5 @@
 ## To read
 
-2. Electrically actuated phase-change pixels for transmissive and reflective spatial light modulators in the near and mid infrared
-
 3. Phase-Change Materials for Group-IV Electro-Optical Switching and Modulation
 
 4. Simulations of Silicon-on-Insulator Channel-Waveguide Electro-optical 2 × 2 Switches and 1 × 1 Modulators Using a Ge 2 Sb 2 Te 5 Self-Holding Layer
@@ -22,8 +20,18 @@
 
 12. Small-Sized Self-Holding Optical Switch Using Phase-Change Material
 
-13. Ultra-small, self-holding, optical gate switch using Ge 2 Sb 2 Te 5 with a multi-mode Si waveguide
+13. Ultra-small, self-holding, optical gate switch using Ge2Sb2Te5 with a multi-mode Si waveguide
+
+14. Proposal of a small self-holding 2 × 2 optical switch using phase-change material
+
+15. Electro-optical switching at 1550 nm using a two-state GeSe phase-change layer
+
+16. Electro-optic phase-change 2 × 2 switching using three- and four-waveguide directional couplers
+
+17. Waveguide-size hybrid Si-VO2 waveguide electroabsorption optical switches and photodetectors
 
 ## Done
 
 1. An	All-Optical,	Non-volatile,	Bidirectional,Phase-Change	Meta-Switch
+
+2. Electrically actuated phase-change pixels for transmissive and reflective spatial light modulators in the near and mid infrared
