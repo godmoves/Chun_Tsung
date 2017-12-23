@@ -1,4 +1,4 @@
-import numpy as np
+import random
 import matplotlib.pyplot as plt
 
 STAN_TIME = 8 
@@ -12,29 +12,48 @@ class Operation:
 		self.i = index
 		self.t = optype
 		self.l = oplength
-		self.o = False    #o for over time
+		self.o = False    # o for over time
+		self.n = None     # n for nurse of the surgery
 
 class Room:
 	def __init__(self, index):
 		self.index = index
 		self.oplist = []
 		self.optypelist = [0] * 10
+		self.cumtime = 0
 		self.totaltime = 0
 		self.overwork = False
+		self.finish = False
 
-def printroomlist(roomlist):
+def mincumtime(roomlist):
+	minindex = None
+	mincumt = 99
+	for i in range(12):
+		# print("checking room ", i)
+		# print("room cumtime", roomlist[i].cumtime)
+		if (roomlist[i].cumtime < mincumt and roomlist[i].finish == False):
+			mincumt = roomlist[i].cumtime
+			minindex = i
+	return minindex
+
+def printroomlist(roomlist, oplist):
 	for i in range(12):
 		print("Room index: {}".format(i))
-		print("Operation order: {}".format(roomlist[i].oplist[::-1]))
+		print("Operation order: ", end="")
+		for j in roomlist[i].oplist[::-1]:
+			print("{}({})({}) ".format(j, oplist[j].n, oplist[j].l), end="")
+		print("")
+		#print("Operation order: {}".format([i for i in roomlist[i].oplist[::-1]]))# the line is reversed to minimize overwork
 		print("Operation type sum: {}".format(sum(roomlist[i].optypelist)))
 		print("Total work time: {} hours".format(roomlist[i].totaltime))
 		print("Over work: {}".format(roomlist[i].overwork))
-		print()
+		print("")
 
 def plotroomlist(roomlist, oplist):
 	height = 16
 	interval = 4
 	colors = ["brown", "red", "yellow", "blue", "green"]
+	#colors = ["white", "#a6cee3", "#1f78b4", "#33a02c", "#b2df8a", "#fb9a99", "#fdbf6f", "#ff7f00", "#cab2d6", "#e31a1c"]
 	x_label = "time (hours)"
 
 	ax = plt.subplot()
@@ -43,9 +62,9 @@ def plotroomlist(roomlist, oplist):
 	for i in range(12):
 		labels.append("Room " + str(i))
 		totaltime = 0
-		for j in roomlist[i].oplist[::-1]:
+		for j in roomlist[i].oplist[::-1]:   # we must reverse it to keep the result same
 			ax.broken_barh([(totaltime, oplist[j].l)], ((height+interval)*i + \
-				interval, height), facecolors=colors[NURSE[oplist[j].t]])
+				interval, height), facecolors=colors[NURSE[oplist[j].t]]) # this line can be changed to adapt to different op type
 			totaltime += oplist[j].l
 	ax.set_ylim(0, (height+interval)*len(labels)+interval)
 	ax.set_xlim(0, 11)
@@ -185,8 +204,8 @@ for i in oplist1_sorted_index:
 
 		prev_index = roomlist1_sorted_index[strat_index]
 
-	print("step {}".format(i))
-	printdebug(roomlist1)
+	#print("step {}".format(i))
+	#printdebug(roomlist1)
 
 roomlist1[8].oplist = [3, 19, 4, 7]
 roomlist1[3].oplist = [12, 35]
@@ -219,10 +238,53 @@ for i in range(12):
 for i in range(12):
 	if (roomlist1[i].totaltime > STAN_TIME):
 		roomlist1[i].overwork = True
-printroomlist(roomlist1)
+
+NURSE1_LIST = [6, 5, 4, 3, 2, 1]
+NURSE2_LIST = [9, 8, 7]
+NURSE3_LIST = [13, 12, 11, 10]
+NURSE4_LIST = [16, 15, 14]
+NURSE_LIST = [NURSE1_LIST, NURSE2_LIST, NURSE3_LIST, NURSE4_LIST]
+
+BUF_OP_LIST = [None] * 12
+BUF_OP_NUM = [0] * 12
+
+
+for i in range(12):
+		op_num = BUF_OP_NUM[i]
+		BUF_OP_LIST[i] = roomlist1[i].oplist[op_num]
+		roomlist1[i].cumtime += oplist1[roomlist1[i].oplist[op_num]].l
+count = 0
+while (count < len(oplist1)):
+	next_i = mincumtime(roomlist1)
+	# print("count", count)
+	# print("Mark op {}".format(BUF_OP_LIST[next_i]))
+	next_n = NURSE_LIST[NURSE[oplist1[BUF_OP_LIST[next_i]].t] - 1].pop()
+	NURSE_LIST[NURSE[oplist1[BUF_OP_LIST[next_i]].t] - 1].insert(0, next_n)
+	oplist1[BUF_OP_LIST[next_i]].n = next_n
+	BUF_OP_NUM[next_i] += 1
+	if (BUF_OP_NUM[next_i] >= len(roomlist1[next_i].oplist)):
+		roomlist1[next_i].finish = True
+		count += 1
+		continue
+	op_num = BUF_OP_NUM[next_i]
+	# print("next op", roomlist1[next_i].oplist[op_num])
+	BUF_OP_LIST[next_i] = roomlist1[next_i].oplist[op_num]
+	roomlist1[next_i].cumtime += oplist1[roomlist1[next_i].oplist[op_num]].l
+	# if (BUF_OP_NUM[next_i] == len(roomlist1[next_i].oplist)):
+	# 	roomlist1[next_i].finish = True
+	###################################
+	# for i in range(12):
+	# 	if not roomlist1[i].finish:
+	# 		print("{} ".format(i), end="")
+	# print("")
+	###################################
+	count += 1
+
+OVER_LIST = [0] * 16
+printroomlist(roomlist1, oplist1)
 plotroomlist(roomlist1, oplist1)
 total_delay = 0
 for i in range(len(oplist1)):
 	if (oplist1[i].o):
-		total_delay += 1
-print("Total delay num: ", total_delay)
+		OVER_LIST[oplist1[i].n - 1] = 1
+print("Total delay workers: ", sum(OVER_LIST))
