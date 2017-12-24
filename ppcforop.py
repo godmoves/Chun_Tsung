@@ -85,14 +85,14 @@ def checktypenum(room, operation):
 	else:
 		return True
 # Day 1
-oplist1 = [Operation(0, 1, 1.75), Operation(1, 1, 1.5), Operation(2, 6, 3.5), Operation(3, 6, 3), Operation(4, 6, 3),
-	Operation(5, 6, 2.42), Operation(6, 6, 6), Operation(7, 6, 2), Operation(8, 6, 3.5), Operation(9, 6, 2.75),
-	Operation(10, 4, 2.75), Operation(11, 4, 1.83), Operation(12, 4, 5.25), Operation(13, 4, 2.75), Operation(14, 4, 2.75), 
-	Operation(15, 4, 1.83), Operation(16, 4, 3.25), Operation(17, 4, 1.83), Operation(18, 5, 4.42), Operation(19, 5, 3), 
-	Operation(20, 5, 3.17), Operation(21, 5, 4.25), Operation(22, 5, 4.33), Operation(23, 5, 3.67), Operation(24, 5, 2.92), 
-	Operation(25, 5, 2.17), Operation(26, 5, 3.33), Operation(27, 5, 2), Operation(28, 3, 0.67), Operation(29, 7, 4.08), 
-	Operation(30, 7, 2.25), Operation(31, 7, 2.25), Operation(32, 8, 5.25), Operation(33, 8, 6), Operation(34, 8, 6),
-	Operation(35, 8, 5.5), Operation(36, 8, 4.75), Operation(37, 9, 5)]
+# oplist1 = [Operation(0, 1, 1.75), Operation(1, 1, 1.5), Operation(2, 6, 3.5), Operation(3, 6, 3), Operation(4, 6, 3),
+# 	Operation(5, 6, 2.42), Operation(6, 6, 6), Operation(7, 6, 2), Operation(8, 6, 3.5), Operation(9, 6, 2.75),
+# 	Operation(10, 4, 2.75), Operation(11, 4, 1.83), Operation(12, 4, 5.25), Operation(13, 4, 2.75), Operation(14, 4, 2.75), 
+# 	Operation(15, 4, 1.83), Operation(16, 4, 3.25), Operation(17, 4, 1.83), Operation(18, 5, 4.42), Operation(19, 5, 3), 
+# 	Operation(20, 5, 3.17), Operation(21, 5, 4.25), Operation(22, 5, 4.33), Operation(23, 5, 3.67), Operation(24, 5, 2.92), 
+# 	Operation(25, 5, 2.17), Operation(26, 5, 3.33), Operation(27, 5, 2), Operation(28, 3, 0.67), Operation(29, 7, 4.08), 
+# 	Operation(30, 7, 2.25), Operation(31, 7, 2.25), Operation(32, 8, 5.25), Operation(33, 8, 6), Operation(34, 8, 6),
+# 	Operation(35, 8, 5.5), Operation(36, 8, 4.75), Operation(37, 9, 5)]
 # Day 2
 # oplist1 = [Operation(0, 1, 1.75), Operation(1, 6, 3.67), Operation(2, 6, 2), Operation(3, 6, 4.5), Operation(4, 6, 3.5), Operation(5, 6, 3.5),
 # 	Operation(6, 6, 4.25), Operation(7, 6, 4.5), Operation(8, 6, 3.5), Operation(9, 6, 3.5), Operation(10, 6, 3.5), Operation(11, 4, 3.92), Operation(12, 5, 4.5),
@@ -100,24 +100,24 @@ oplist1 = [Operation(0, 1, 1.75), Operation(1, 1, 1.5), Operation(2, 6, 3.5), Op
 # 	Operation(20, 5, 5), Operation(21, 5, 4.17), Operation(22, 5, 3), Operation(23, 5, 5.75), Operation(24, 5, 3), Operation(25, 3, 0.33), Operation(26, 3, 0.33),
 # 	Operation(27, 7, 4.67), Operation(28, 7, 1.92), Operation(29, 7, 2.17), Operation(30, 7, 2.5), Operation(31, 7, 1.92), Operation(32, 8, 9)]
 # Day 3
-# oplist1 = []
-# count = 0
-# for i in [2.5, 5, 3.75, 4, 5, 5, 6.67, 1.33, 2.17, 3.5, 2, 3.58, 3.5]:
-# 	oplist1.append(Operation(count, 6, i))
-# 	count += 1
-# for i in [1.75, 2, 2, 1.75, 3.25, 4.5, 1.75, 1.75]:
-# 	oplist1.append(Operation(count, 4, i))
-# 	count += 1
-# for i in [4.25, 4, 3.67, 5.5, 2.42]:
-# 	oplist1.append(Operation(count, 5, i))
-# 	count += 1
-# oplist1.append(Operation(26, 3, 2.5))
-# oplist1.append(Operation(27, 3, 0.75))
-# oplist1.append(Operation(28, 7, 2.17))
-# oplist1.append(Operation(29, 8, 5.75))
-# oplist1.append(Operation(30, 8, 4.58))
-# oplist1.append(Operation(31, 8, 6))
-# oplist1.append(Operation(32, 8, 6.17))
+oplist1 = []
+count = 0
+for i in [2.5, 5, 3.75, 4, 5, 6.67, 1.33, 2.17, 3.5, 2, 3.58, 3.5]:
+	oplist1.append(Operation(count, 6, i))
+	count += 1
+for i in [1.75, 2, 2, 1.75, 3.25, 4.5, 1.75, 1.75]:
+	oplist1.append(Operation(count, 4, i))
+	count += 1
+for i in [4.25, 4, 3.67, 5.5, 2.42]:
+	oplist1.append(Operation(count, 5, i))
+	count += 1
+oplist1.append(Operation(25, 3, 2.5))
+oplist1.append(Operation(26, 3, 0.75))
+oplist1.append(Operation(27, 7, 2.17))
+oplist1.append(Operation(28, 8, 5.75))
+oplist1.append(Operation(29, 8, 4.58))
+oplist1.append(Operation(30, 8, 6))
+oplist1.append(Operation(31, 8, 6.17))
 # Day 4
 # oplist1 = []
 # count = 0
@@ -177,7 +177,7 @@ for i in oplist1_sorted_index:
 		roomlist1[prev_index].totaltime += oplist1[i].l
 		roomlist1[prev_index].optypelist[oplist1[i].t] = 1
 
-		roomlist1_sorted = sorted(roomlist1, key=lambda item:item.totaltime, reverse=True)
+		roomlist1_sorted = sorted(roomlist1, key=lambda item:item.totaltime, reverse=False)
 		roomlist1_sorted_index = [item.index for item in roomlist1_sorted]
 
 	else:
@@ -199,7 +199,7 @@ for i in oplist1_sorted_index:
 		roomlist1[roomlist1_sorted_index[strat_index]].oplist.append(i)
 		roomlist1[roomlist1_sorted_index[strat_index]].totaltime += oplist1[i].l
 
-		roomlist1_sorted = sorted(roomlist1, key=lambda item:item.totaltime, reverse=True)
+		roomlist1_sorted = sorted(roomlist1, key=lambda item:item.totaltime, reverse=False)
 		roomlist1_sorted_index = [item.index for item in roomlist1_sorted]
 
 		prev_index = roomlist1_sorted_index[strat_index]
@@ -207,17 +207,17 @@ for i in oplist1_sorted_index:
 	#print("step {}".format(i))
 	#printdebug(roomlist1)
 
-roomlist1[8].oplist = [3, 19, 4, 7]
-roomlist1[3].oplist = [12, 35]
-roomlist1[10].oplist = [13, 14, 30, 5]
+# roomlist1[8].oplist = [3, 19, 4, 7]
+# roomlist1[3].oplist = [12, 35]
+# roomlist1[10].oplist = [13, 14, 30, 5]
 
 # roomlist1[3].oplist = [25, 26,  30, 3]
 # roomlist1[5].oplist = [29, 28, 15]
 # roomlist1[6].oplist = [18, 6]
 # roomlist1[8].oplist = [19, 11, 2]
 
-# roomlist1[9].oplist = [10, 0, 22, 16]
-# roomlist1[3].oplist = [29, 28]
+roomlist1[6].oplist = [29, 6, 17]
+roomlist1[0].oplist = [5, 19, 26]
 
 # roomlist1[8].oplist = [17, 8]
 # roomlist1[9].oplist = [5, 6, 7]
@@ -282,9 +282,9 @@ while (count < len(oplist1)):
 
 OVER_LIST = [0] * 16
 printroomlist(roomlist1, oplist1)
-plotroomlist(roomlist1, oplist1)
 total_delay = 0
 for i in range(len(oplist1)):
 	if (oplist1[i].o):
 		OVER_LIST[oplist1[i].n - 1] = 1
 print("Total delay workers: ", sum(OVER_LIST))
+plotroomlist(roomlist1, oplist1)
